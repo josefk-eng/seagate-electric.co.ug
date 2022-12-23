@@ -1,0 +1,376 @@
+{% extends 'master.html' %}
+{% load static %}
+{% block content %}
+  <!-- ======= Hero Section ======= -->
+  <section id="hero">
+    <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
+
+      <div class="carousel-inner" role="listbox">
+
+        <!-- Slide 1 -->
+        <div class="carousel-item active" style="background-image: url(static/img/slide/cables.jpeg);">
+          <div class="carousel-container">
+            <div class="carousel-content animate__animated animate__fadeInUp text-center">
+              <h2 >Fibre Infrastructure Service</span></h2>
+              <p>We cater for all your fibre infrastructure and installation needs</p>
+              <div><a href="{% url 'service' %}" class="btn-get-started">Find Out More</a></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="carousel-item" style="background-image: url(static/img/slide/wireless.jpeg);">
+          <div class="carousel-container">
+            <div class="carousel-content animate__animated animate__fadeInUp text-center">
+              <h2>Radio And Wireless Service</h2>
+              <p>We provide support and actual installation of radio and wireless communications</p>
+              <div><a href="{% url 'service' %}" class="btn-get-started">Find Out More</a></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="carousel-item" style="background-image: url(static/img/slide/manhole.jpeg);">
+          <div class="carousel-container">
+            <div class="carousel-content animate__animated animate__fadeInUp text-center">
+              <h2>Manhole installation</h2>
+              <p>We also provide manhole covers to secure underground installations</p>
+              <div><a href="" class="btn-get-started">Find Out More</a></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+      </a>
+
+      <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
+        <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+      </a>
+
+      <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
+
+    </div>
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= About Us Section ======= -->
+    <section id="about-us" class="about-us">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row content">
+          <div class="col-lg-6" data-aos="fade-right">
+            <h2>Welcome To Sea Gate Electric</h2>
+            <h3>Your One Stop Solution For All Your Telecommunications Infrastructure Needs</h3>
+            <p>
+              This is being achieved by properly analyzing customer business requirements through proper consultations, and implementation of customized solutions. We are committed to the pursuit of excellence, enhanced performance, and advancement of our customers businesses.
+            </p>
+            <ul>
+              <li><i class="ri-check-double-line"></i> Underground and Aerial Fibre cable installation</li>
+              <li><i class="ri-check-double-line"></i> Radio and wireless telecommunications</li>
+              <li><i class="ri-check-double-line"></i> End To End communications Linking</li>
+            </ul>
+            {% comment %} <p class="fst-italic">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+              magna aliqua.
+            </p> {% endcomment %}
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0" data-aos="fade-left">
+            <img src="{% static 'img/inspire.jpeg' %}" style="max-height: 450px ;"/>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Us Section -->
+
+        <!-- ======= Why Choose Us Section ======= -->
+        <section id="why-us" class="why-us">
+          <div class="container" data-aos="fade-up">
+    
+            <div class="section-title">
+              <h2>Why Choose Us</h2>
+            </div>
+    
+            <div class="row g-0" data-aos="fade-up" data-aos-delay="200">
+    
+              <div class="col-xl-5 img-bg" style="background-image: url('static/img/cabinet.jpeg')"></div>
+              <div class="col-xl-7 slides  position-relative">
+    
+                <div class="slides-1 swiper">
+                  <div class="swiper-wrapper">
+    
+                    <div class="swiper-slide">
+                      <div class="item">
+                        <h3 class="mb-3">Let's grow your business together</h3>
+                        <h4 class="mb-3">Optio reiciendis accusantium iusto architecto at quia minima maiores quidem, dolorum.</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus, ipsam perferendis asperiores explicabo vel tempore velit totam, natus nesciunt accusantium dicta quod quibusdam ipsum maiores nobis non, eum. Ullam reiciendis dignissimos laborum aut, magni voluptatem velit doloribus quas sapiente optio.</p>
+                      </div>
+                    </div><!-- End slide item -->
+    
+                    <div class="swiper-slide">
+                      <div class="item">
+                        <h3 class="mb-3">Unde perspiciatis ut repellat dolorem</h3>
+                        <h4 class="mb-3">Amet cumque nam sed voluptas doloribus iusto. Dolorem eos aliquam quis.</h4>
+                        <p>Dolorem quia fuga consectetur voluptatem. Earum consequatur nulla maxime necessitatibus cum accusamus. Voluptatem dolorem ut numquam dolorum delectus autem veritatis facilis. Et ea ut repellat ea. Facere est dolores fugiat dolor.</p>
+                      </div>
+                    </div><!-- End slide item -->
+    
+                    <div class="swiper-slide">
+                      <div class="item">
+                        <h3 class="mb-3">Aliquid non alias minus</h3>
+                        <h4 class="mb-3">Necessitatibus voluptatibus explicabo dolores a vitae voluptatum.</h4>
+                        <p>Neque voluptates aut. Soluta aut perspiciatis porro deserunt. Voluptate ut itaque velit. Aut consectetur voluptatem aspernatur sequi sit laborum. Voluptas enim dolorum fugiat aut.</p>
+                      </div>
+                    </div><!-- End slide item -->
+    
+                    <div class="swiper-slide">
+                      <div class="item">
+                        <h3 class="mb-3">Necessitatibus suscipit non voluptatem quibusdam</h3>
+                        <h4 class="mb-3">Tempora quos est ut quia adipisci ut voluptas. Deleniti laborum soluta nihil est. Eum similique neque autem ut.</h4>
+                        <p>Ut rerum et autem vel. Et rerum molestiae aut sit vel incidunt sit at voluptatem. Saepe dolorem et sed voluptate impedit. Ad et qui sint at qui animi animi rerum.</p>
+                      </div>
+                    </div><!-- End slide item -->
+    
+                  </div>
+                  <div class="swiper-pagination"></div>
+                </div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+              </div>
+    
+            </div>
+    
+          </div>
+        </section><!-- End Why Choose Us Section -->
+
+    <!-- ======= Portfoio Section ======= -->
+    <section id="portfolio" class="portfoio">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Portfolio</h2>
+          <p>Our experience in telecommunications is un matched, we link up offices, business sites far apart, data centers and so on. Our team of experienced workers is here to handle all your telecommunications needs </p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-12 d-flex justify-content-center">
+            <ul id="portfolio-flters">
+              <li data-filter="*" class="filter-active">All</li>
+              <li data-filter=".filter-app">Under Ground Fibre Installation</li>
+              <li data-filter=".filter-card">Aerial Installation</li>
+              <li data-filter=".filter-web">Office to Office Connections</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="row portfolio-container">
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+            <img src="{% static 'img/portfolio/conduit.jpeg' %}" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Fibre installation</h4>
+              {% comment %} <p>App</p> {% endcomment %}
+              <a href="{% static 'img/portfolio/conduit.jpeg' %}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 1"><i class="bx bx-plus"></i></a>
+              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+            <img src="{% static 'img/portfolio/manOnTop.jpeg' %}" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Aerial</h4>
+              {% comment %} <p>Web</p> {% endcomment %}
+              <a href="{% static 'img/portfolio/manOnTop.jpeg' %}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
+              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+            <img src="{% static 'img/portfolio/underground.jpeg' %}" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Underground</h4>
+              {% comment %} <p>App</p> {% endcomment %}
+              <a href="{% static 'img/portfolio/underground.jpeg' %}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 2"><i class="bx bx-plus"></i></a>
+              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+            <img src="{% static 'img/portfolio/portfolio-4.jpg' %}" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Card 2</h4>
+              <p>Card</p>
+              <a href="{% static 'img/portfolio/portfolio-4.jpg' %}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 2"><i class="bx bx-plus"></i></a>
+              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+            <img src="{% static 'img/portfolio/portfolio-4.jpg' %}" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Web 2</h4>
+              <p>Web</p>
+              <a href="{% static 'img/portfolio/portfolio-4.jpg' %}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 2"><i class="bx bx-plus"></i></a>
+              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+            <img src="{% static 'img/portfolio/portfolio-4.jpg' %}" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>App 3</h4>
+              <p>App</p>
+              <a href="{% static 'img/portfolio/portfolio-4.jpg' %}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 3"><i class="bx bx-plus"></i></a>
+              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+            <img src="{% static 'img/portfolio/portfolio-4.jpg' %}" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Card 1</h4>
+              <p>Card</p>
+              <a href="{% static 'img/portfolio/portfolio-4.jpg' %}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 1"><i class="bx bx-plus"></i></a>
+              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+            <img src="{% static 'img/portfolio/portfolio-4.jpg' %}" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Card 3</h4>
+              <p>Card</p>
+              <a href="{% static 'img/portfolio/portfolio-4.jpg' %}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 3"><i class="bx bx-plus"></i></a>
+              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+            <img src="{% static 'img/portfolio/portfolio-4.jpg' %}" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Web 3</h4>
+              <p>Web</p>
+              <a href="{% static 'img/portfolio/portfolio-4.jpg' %}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
+              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Portfoio Section -->
+
+    <!-- ======= Help Section ======= -->
+    <section id="help" class="section-bg">
+
+      <div class="container" data-aos="fade-up">
+
+
+        <div class="section-title">
+          <h3>How can we help you today?</h3>
+        </div>
+
+        <div class="row help-info">
+
+          <div class="col-md-4">
+            <div class="help-address">
+              <a href="{% url 'soon'%}">
+                <img src="{% static 'img/svgs/service.svg'%}" style="width:48px;height:48px;"/>
+                <h3>Request A Service</h3>
+              </a>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="help-phone">
+              <a href="{% url 'soon'%}">
+                <img src="{% static 'img/svgs/support.svg'%}"/>
+                <h3>Get Help Online</h3>
+              </a>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="help-email">
+              <a href="{% url 'soon'%}">
+                <img src="{% static 'img/svgs/consultation.svg'%}" style="width:48px;height:48px;"/>
+                <h3>Consultation</h3>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Contact Section -->
+
+
+    <!-- ======= Our Clients Section ======= -->
+    <section id="clients" class="clients">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Clients</h2>
+        </div>
+
+        <div class="row no-gutters clients-wrap clearfix" data-aos="fade-up">
+
+          <div class="col-lg-3 col-md-4 col-6">
+            <div class="client-logo">
+              <img src="{% static 'img/clients/airtel.png' %}" class="img-fluid" alt="">
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-6">
+            <div class="client-logo">
+              <img src="{% static 'img/clients/centenary.png' %}" class="img-fluid" alt="">
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-6">
+            <div class="client-logo">
+              <img src="{% static 'img/clients/mtn.png' %}" class="img-fluid" alt="">
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-6">
+            <div class="client-logo">
+              <img src="{% static 'img/clients/stanbic.png' %}" class="img-fluid" alt="">
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-6">
+            <div class="client-logo">
+              <img src="{% static 'img/clients/utl.png' %}" class="img-fluid" alt="">
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-6">
+            <div class="client-logo">
+              <img src="{% static 'img/clients/umeme.png' %}" class="img-fluid" alt="">
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-6">
+            <div class="client-logo">
+              <img src="{% static 'img/clients/stanbic.png' %}" class="img-fluid" alt="">
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-6">
+            <div class="client-logo">
+              <img src="{% static 'img/clients/client-8.png' %}" class="img-fluid" alt="">
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Our Clients Section -->
+
+  </main><!-- End #main -->
+
+{% endblock content %}
