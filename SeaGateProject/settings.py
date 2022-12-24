@@ -76,7 +76,10 @@ TEMPLATES = [
     },
 ]
 
-STATICFILES_DIRS = [BASE_DIR/'static']
+STATICFILES_DIRS = [
+    BASE_DIR/'SeaGateProject/static',
+    
+    ]
 
 WSGI_APPLICATION = 'SeaGateProject.wsgi.application'
 
@@ -126,9 +129,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_URL = 'statics/'
+STATIC_URL = 'static/'
 
-STATIC_ROOT = os.path.join(BASE_DIR, "statics/")
+STATIC_ROOT = os.path.join(BASE_DIR, "static/")
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
