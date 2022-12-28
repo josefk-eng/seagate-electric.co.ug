@@ -1,8 +1,20 @@
 {% extends 'master.html' %}
 {% load static %}
 {% block content %}
+
+<!-- ======= Breadcrumbs ======= -->
+<div class="breadcrumbs d-flex align-items-center" style="background-image: url('../../static/img/cabinet.jpeg');margin-top:-1px;">
+    <div class="container position-relative d-flex flex-column align-items-center">
+        <h2>{{product.name}}</h2>
+        <ol>
+        <li><a href="{% url 'home'%}">Home</a></li>
+        <li><a href="{% url 'products'%}">Our Products</a></li>
+        <li>{{product.name}}</li>
+        </ol>
+</div>
+</div><!-- End Breadcrumbs -->
         <!-- Product section-->
-        <section class="py-5 mt-5" id="product">
+        <section class="py-5" id="product">
             <div class="container px-4 px-lg-5 my-5">
                 <div class="row gx-4 gx-lg-5 align-items-center mt-5">
                     <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="{{product.image.url}}" alt="..." /></div>
@@ -10,7 +22,7 @@
                         <div class="small mb-1">SKU: BST-498</div>
                         <h1 class="display-5 fw-bolder">{{product.name}}</h1>
                         <div class="fs-5 mb-5">
-                            <span class="text-decoration-line-through">$45.00</span>
+                            <span class="text-decoration-line-through">Shs0.00</span>
                             <span>{{product.price}}</span>
                         </div>
                         <p class="lead">{{product.description}}</p>
@@ -45,7 +57,7 @@
                                             <!-- Product name-->
                                             <h5 class="fw-bolder">{{myproduct.name}}</h5>
                                             <!-- Product price-->
-                                            <span class="text-muted text-decoration-line-through">Shs.50.00</span>
+                                            <span class="text-muted text-decoration-line-through">Shs.0.00</span>
                                             Shs.{{myproduct.price}}/=
                                         </div>
                                     </div>

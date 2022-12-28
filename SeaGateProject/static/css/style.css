@@ -2715,12 +2715,12 @@ section {
   bottom: 0;
 }
 
-#Tools-details {
+/* #Tools-details {
   padding-top: 170px;
 }
 #product{
   padding-top: 170px;
-}
+} */
 
 #Tools-details .details h2 {
   color: #112363;

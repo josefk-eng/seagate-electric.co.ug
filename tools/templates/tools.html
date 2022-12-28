@@ -19,11 +19,13 @@
             {% for tool in tools %}
               <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
                 <div class="icon-box iconbox-blue">
+                  <a href="{% url 'tool' id=tool.id%}" style="text-decoration:none;color:black;">
                   <div class="icon">
                     <img src="{{tool.toolImage.url}}"/>
                   </div>
-                  <h4><a href="">{{tool.name}}</a></h4>
+                  <h4>{{tool.name}}</h4>
                   <p>{{tool.small_desc}}</p>
+                </a>
                 </div>
               </div>
             {% endfor %}
