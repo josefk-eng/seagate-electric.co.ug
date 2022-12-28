@@ -1,8 +1,18 @@
 from django.shortcuts import render
+from .models import Product
+from tools.models import Tool
+from services.models import Service
 
 # Create your views here.
 def products(request):
-    return render(request,'products.html')
+    products = Product.objects.all()
+    tools = Tool.objects.all()
+    services = Service.objects.all()
+    return render(request,'products.html',{"products":products,"tools":tools,"services":services})
 
-def product(request):
-    return render(request,'product.html')
+def product(request, id):
+    products = Product.objects.all()
+    tools = Tool.objects.all()
+    product = products.get(id=id)
+    services = Service.objects.all()
+    return render(request,'product.html', {'product':product,"products":products,"tools":tools,"services":services})

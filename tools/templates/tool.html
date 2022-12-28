@@ -2,26 +2,22 @@
 {% load static%}
 
 {% block content%}
-    <!-- ======= Speaker Details Sectionn ======= -->
-    <section id="speakers-details">
+    <!-- ======= Tool Details Sectionn ======= -->
+    <section id="Tools-details">
         <div class="container">
           {% comment %} <div class="section-title">
             <h2>Tool</h2>
           </div> {% endcomment %}
           <div class="row">
-            <div class="col-md-6">
-              <img src="{% static 'img/tools/splicing.png'%}" alt="Speaker 1" class="img-fluid">
+            <div class="col-md-6 text-center">
+              <img src="{{tool.toolImage.url}}" alt="{{tool.name}}" class="img-fluid">
             </div>
   
             <div class="col-md-6">
               <div class="details">
-                <h2>Splicing Machine</h2>
+                <h2>{{tool.name}}</h2>
                 
-                <p>Voluptatem perferendis sed assumenda voluptatibus. Laudantium molestiae sint. Doloremque odio dolore dolore sit. Quae labore alias ea omnis ex expedita sapiente molestias atque. Optio voluptas et.</p>
-  
-                <p>Aboriosam inventore dolorem inventore nam est esse. Aperiam voluptatem nisi molestias laborum ut. Porro dignissimos eum. Tempore dolores minus unde est voluptatum incidunt ut aperiam.</p>
-  
-                <p>Et dolore blanditiis officiis non quod id possimus. Optio non commodi alias sint culpa sapiente nihil ipsa magnam. Qui eum alias provident omnis incidunt aut. Eius et officia corrupti omnis error vel quia omnis velit. In qui debitis autem aperiam voluptates unde sunt et facilis.</p>
+                <p>{{tool.big_desc}}</p>
               </div>
             </div>
   

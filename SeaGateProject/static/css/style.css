@@ -891,7 +891,8 @@ section {
 --------------------------------------------------------------*/
 .services .icon-box {
   text-align: center;
-  padding: 70px 20px 80px 20px;
+  padding: 70px 20px 20px 20px;
+  margin-bottom: 50px;
   transition: all ease-in-out 0.3s;
   background: #fff;
 }
@@ -2656,19 +2657,19 @@ section {
 
 
 /*--------------------------------------------------------------
-# Speakers Section
+# Tools Section
 --------------------------------------------------------------*/
-#speakers {
+#Tools {
   padding: 60px 0 30px 0;
 }
 
-#speakers .speaker {
+#Tools .speaker {
   position: relative;
   overflow: hidden;
   margin-bottom: 30px;
 }
 
-#speakers .speaker .details {
+#Tools .speaker .details {
   background: rgba(6, 12, 34, 0.76);
   position: absolute;
   left: 0;
@@ -2679,57 +2680,60 @@ section {
   transition: all 300ms cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
-#speakers .speaker .details h3 {
+#Tools .speaker .details h3 {
   color: #fff;
   font-size: 22px;
   font-weight: 600;
   margin-bottom: 5px;
 }
 
-#speakers .speaker .details p {
+#Tools .speaker .details p {
   color: #fff;
   font-size: 15px;
   margin-bottom: 10px;
   font-style: italic;
 }
 
-#speakers .speaker .details .social {
+#Tools .speaker .details .social {
   height: 40px;
 }
 
-#speakers .speaker .details .social i {
+#Tools .speaker .details .social i {
   line-height: 0;
   margin: 0 2px;
 }
 
-#speakers .speaker .details a {
+#Tools .speaker .details a {
   color: #fff;
 }
 
-#speakers .speaker .details a:hover {
+#Tools .speaker .details a:hover {
   color: #f82249;
 }
 
-#speakers .speaker:hover .details {
+#Tools .speaker:hover .details {
   bottom: 0;
 }
 
-#speakers-details {
+#Tools-details {
+  padding-top: 170px;
+}
+#product{
   padding-top: 170px;
 }
 
-#speakers-details .details h2 {
+#Tools-details .details h2 {
   color: #112363;
   font-size: 28px;
   font-weight: 700;
   margin-bottom: 10px;
 }
 
-#speakers-details .details .social {
+#Tools-details .details .social {
   margin-bottom: 15px;
 }
 
-#speakers-details .details .social a {
+#Tools-details .details .social a {
   background: #e9edfb;
   color: #112363;
   line-height: 1;
@@ -2743,18 +2747,77 @@ section {
   justify-content: center;
 }
 
-#speakers-details .details .social a:hover {
+#Tools-details .details .social a:hover {
   background: #f82249;
   color: #fff;
 }
 
-#speakers-details .details .social a i {
+#Tools-details .details .social a i {
   font-size: 16px;
   line-height: 0;
 }
 
-#speakers-details .details p {
+#Tools-details .details p {
   color: #112363;
   font-size: 15px;
   margin-bottom: 10px;
+}
+
+
+/*--------------------------------------------------------------
+# Hotels Section
+--------------------------------------------------------------*/
+#hotels {
+  padding: 60px 0;
+}
+
+#hotels .hotel {
+  border: 1px solid #e0e5fa;
+  background: #fff;
+  margin-bottom: 30px;
+}
+
+#hotels .hotel:hover .hotel-img img {
+  transform: scale(1.1);
+}
+
+#hotels .hotel-img {
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+
+#hotels .hotel-img img {
+  transition: 0.3s ease-in-out;
+}
+
+#hotels h3 {
+  font-weight: 600;
+  font-size: 20px;
+  margin-bottom: 5px;
+  padding: 0 20px;
+}
+
+#hotels a {
+  color: #152b79;
+}
+
+#hotels a:hover {
+  color: #f82249;
+}
+
+#hotels .stars {
+  padding: 0 20px;
+  margin-bottom: 5px;
+}
+
+#hotels .stars i {
+  color: rgb(255, 195, 29);
+}
+
+#hotels p {
+  padding: 0 20px;
+  margin-bottom: 20px;
+  color: #060c22;
+  font-style: italic;
+  font-size: 15px;
 }

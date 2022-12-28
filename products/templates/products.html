@@ -1,5 +1,52 @@
 {% extends 'master.html' %}
 {% load static %}
 {% block content %}
+    <!-- ======= Breadcrumbs ======= -->
+    <div class="breadcrumbs d-flex align-items-center" style="background-image: url('../../static/img/contact.jpeg');margin-top:-1px;">
+        <div class="container position-relative d-flex flex-column align-items-center">
 
+            <h2>Products</h2>
+            <ol>
+            <li><a href="/">Home</a></li>
+            <li>Our Products</li>
+            </ol>
+
+    </div>
+    </div><!-- End Breadcrumbs -->
+    <!-- ======= Products Section ======= -->
+    <section id="hotels" class="section-with-bg">
+
+        <div class="container" data-aos="fade-up">
+          {% comment %} <div class="section-header">
+            <h2></h2>
+            <p>Here Are Some Our Products</p>
+          </div> {% endcomment %}
+  
+          <div class="row" data-aos="fade-up" data-aos-delay="100">
+  
+            {% for product in products %}
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="hotel">
+                    <div class="hotel-img">
+                        <img src="{{product.image.url}}" alt="{{product.name}}" class="img-fluid" style = "background-image: url({{product.image.url}});">
+                    </div>
+                    <h3><a href="#">{{product.name}}</a></h3>
+                    <div class="stars">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                    </div>
+                    <p>Shs.{{product.price}}/=</p>
+                    </div>
+                </div>
+            
+            {% endfor %}
+
+          </div>
+        </div>
+  
+      </section><!-- End Products Section -->
 {% endblock %}

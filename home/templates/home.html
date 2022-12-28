@@ -7,38 +7,19 @@
 
       <div class="carousel-inner" role="listbox">
 
-        <!-- Slide 1 -->
-        <div class="carousel-item active" style="background-image: url(static/img/slide/cables.jpeg);">
-          <div class="carousel-container">
-            <div class="carousel-content animate__animated animate__fadeInUp text-center">
-              <h2 >Fibre Infrastructure Service</span></h2>
-              <p>We cater for all your fibre infrastructure and installation needs</p>
-              <div><a href="{% url 'service' %}" class="btn-get-started">Find Out More</a></div>
+        {% for slider in sliders %}
+      
+          <div class="carousel-item {% if forloop.first %}active{% endif %}" style="background-image: url({{slider.image.url}});">
+            <div class="carousel-container">
+              <div class="carousel-content animate__animated animate__fadeInUp text-center">
+                <h2 >{{slider.header}}</span></h2>
+                <p>{{slider.description}}</p>
+                <div><a href="{% url 'service' id=slider.button_link %}" class="btn-get-started">{{slider.button_text}}</a></div>
+              </div>
             </div>
           </div>
-        </div>
 
-        <!-- Slide 2 -->
-        <div class="carousel-item" style="background-image: url(static/img/slide/wireless.jpeg);">
-          <div class="carousel-container">
-            <div class="carousel-content animate__animated animate__fadeInUp text-center">
-              <h2>Radio And Wireless Service</h2>
-              <p>We provide support and actual installation of radio and wireless communications</p>
-              <div><a href="{% url 'service' %}" class="btn-get-started">Find Out More</a></div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Slide 3 -->
-        <div class="carousel-item" style="background-image: url(static/img/slide/manhole.jpeg);">
-          <div class="carousel-container">
-            <div class="carousel-content animate__animated animate__fadeInUp text-center">
-              <h2>Manhole installation</h2>
-              <p>We also provide manhole covers to secure underground installations</p>
-              <div><a href="" class="btn-get-started">Find Out More</a></div>
-            </div>
-          </div>
-        </div>
+        {% endfor %}
 
       </div>
 

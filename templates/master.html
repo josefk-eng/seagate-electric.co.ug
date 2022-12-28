@@ -66,10 +66,13 @@
         <ul>
           <li><a href="{% url 'home' %}" class = "{% if request.resolver_match.url_name == "home" %}active{% endif %}">Home</a></li>
           <li><a href="{% url 'about'%}" class = "{% if request.resolver_match.url_name == "about" %}active{% endif %}">The Company</a></li>
-          <li class="dropdown"><a href="{% url 'services'%}" class = "{% if request.resolver_match.url_name == "services" or request.resolver_match.url_name == "service"  %}active{% endif %}"><span>Our Services</span> <i class="bi bi-chevron-down"></i></a>
+          <li class="dropdown"><a href="" class = "{% if request.resolver_match.url_name == "services" or request.resolver_match.url_name == "service"  %}active{% endif %}"><span>Our Services</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a href="{% url 'service'%}">Fibre Infrastructure</a></li>
-              <li><a href="{% url 'service'%}">Radio And Wireless Networks</a></li>
+              {% for service in services %}
+                <li><a href="{% url 'service' id=service.id %}">{{service.name}}</a></li>
+              {% endfor %}
+              
+              {% comment %} <li><a href="{% url 'service'%}">Radio And Wireless Networks</a></li> {% endcomment %}
               {% comment %} <li class="dropdown"><a href="{% url 'soon'%}"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
                 <ul>
                   <li><a href="{% url 'soon'%}">Deep Drop Down 1</a></li>
@@ -81,11 +84,14 @@
               </li> {% endcomment %}
             </ul>
           </li>
-          <li class="dropdown"><a href="{% url 'soon'%}"><span>Our Products</span> <i class="bi bi-chevron-down"></i></a>
+          <li class="dropdown"><a href="" class = "{% if request.resolver_match.url_name == "product" or request.resolver_match.url_name == "products"  %}active{% endif %}"><span>Our Products</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a href="{% url 'soon'%}">ODFs / Patch Panels</a></li>
-              <li><a href="{% url 'soon'%}">Aerial And Underground Joints</a></li>
-              <li><a href="{% url 'soon'%}">Street And Out Door Cabinets</a></li>
+              {% for product in products %}
+                <li><a href="{% url 'product' id=product.id%}">{{product.name}}</a></li>
+              {% endfor %}
+              
+              {% comment %} <li><a href="{% url 'product'%}">Aerial And Underground Joints</a></li>
+              <li><a href="{% url 'soon'%}">Street And Out Door Cabinets</a></li> {% endcomment %}
               {% comment %} <li class="dropdown"><a href="{% url 'soon'%}"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
                 <ul>
                   <li><a href="{% url 'soon'%}">Deep Drop Down 1</a></li>
@@ -97,11 +103,14 @@
               </li> {% endcomment %}
             </ul>
           </li>
-          <li class="dropdown"><a href="{% url 'tools'%}" class = "{% if request.resolver_match.url_name == "tools" or request.resolver_match.url_name == "tool" %}active{% endif %}"><span>Our Tools</span> <i class="bi bi-chevron-down"></i></a>
+          <li class="dropdown"><a href="" class = "{% if request.resolver_match.url_name == "tools" or request.resolver_match.url_name == "tool" %}active{% endif %}"><span>Our Tools</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a href="{% url 'tool'%}">Splicing Machines</a></li>
+              {% for tool in tools %}
+              <li><a href="{% url 'tool' id=tool.id%}">{{tool.name}}</a></li>
+              {% endfor %}
+              {% comment %} <li><a href="{% url 'tool'%}">Splicing Machines</a></li>
               <li><a href="{% url 'tool'%}">OTDR Machines</a></li>
-              <li><a href="{% url 'tool'%}">Cleavers</a></li>
+              <li><a href="{% url 'tool'%}">Cleavers</a></li> {% endcomment %}
             </ul>
           </li>
 

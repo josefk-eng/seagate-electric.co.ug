@@ -7,10 +7,19 @@
     <div class="breadcrumbs d-flex align-items-center" style="background-image: url('../../static/img/tower.png');">
       <div class="container position-relative d-flex flex-column align-items-center">
 
-        <h2>Services</h2>
+        {% if request.resolver_match.url_name == "service" %}
+          <h2>{{service.name}}</h2>
+          {% else %}
+            <h2>Services</h2>
+          {% endif %}
         <ol>
           <li><a href="{% url 'home' %}">Home</a></li>
+          {% if request.resolver_match.url_name == "service" %} 
+          <li><a href="{% url 'services' %}">Our Services</a></li>
+          <li>{{service.name}}</li>
+          {% else %}
           <li>Our Services</li>
+          {% endif %}
         </ol>
 
       </div>

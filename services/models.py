@@ -34,7 +34,7 @@ class ServiceCard(models.Model):
         verbose_name_plural = _("ServiceCards")
 
     def __str__(self):
-        return self.name
+        return self.title
 
     def get_absolute_url(self):
         return reverse("ServiceCard_detail", kwargs={"pk": self.pk})
@@ -51,7 +51,7 @@ class Testimonial(models.Model):
         verbose_name_plural = _("Testimonials")
 
     def __str__(self):
-        return self.name
+        return self.owner
 
     def get_absolute_url(self):
         return reverse("Testimonial_detail", kwargs={"pk": self.pk})
