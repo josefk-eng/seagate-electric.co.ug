@@ -82,38 +82,16 @@
     
                 <div class="slides-1 swiper">
                   <div class="swiper-wrapper">
-    
+
+                    {% for reason in reasons %}
                     <div class="swiper-slide">
                       <div class="item">
-                        <h3 class="mb-3">Let's grow your business together</h3>
-                        <h4 class="mb-3">Optio reiciendis accusantium iusto architecto at quia minima maiores quidem, dolorum.</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus, ipsam perferendis asperiores explicabo vel tempore velit totam, natus nesciunt accusantium dicta quod quibusdam ipsum maiores nobis non, eum. Ullam reiciendis dignissimos laborum aut, magni voluptatem velit doloribus quas sapiente optio.</p>
+                        <h3 class="mb-3">{{reason.header}}</h3>
+                        <h4 class="mb-3">{{reason.subHeader}}</h4>
+                        <p>{{reason.description}}</p>
                       </div>
                     </div><!-- End slide item -->
-    
-                    <div class="swiper-slide">
-                      <div class="item">
-                        <h3 class="mb-3">Unde perspiciatis ut repellat dolorem</h3>
-                        <h4 class="mb-3">Amet cumque nam sed voluptas doloribus iusto. Dolorem eos aliquam quis.</h4>
-                        <p>Dolorem quia fuga consectetur voluptatem. Earum consequatur nulla maxime necessitatibus cum accusamus. Voluptatem dolorem ut numquam dolorum delectus autem veritatis facilis. Et ea ut repellat ea. Facere est dolores fugiat dolor.</p>
-                      </div>
-                    </div><!-- End slide item -->
-    
-                    <div class="swiper-slide">
-                      <div class="item">
-                        <h3 class="mb-3">Aliquid non alias minus</h3>
-                        <h4 class="mb-3">Necessitatibus voluptatibus explicabo dolores a vitae voluptatum.</h4>
-                        <p>Neque voluptates aut. Soluta aut perspiciatis porro deserunt. Voluptate ut itaque velit. Aut consectetur voluptatem aspernatur sequi sit laborum. Voluptas enim dolorum fugiat aut.</p>
-                      </div>
-                    </div><!-- End slide item -->
-    
-                    <div class="swiper-slide">
-                      <div class="item">
-                        <h3 class="mb-3">Necessitatibus suscipit non voluptatem quibusdam</h3>
-                        <h4 class="mb-3">Tempora quos est ut quia adipisci ut voluptas. Deleniti laborum soluta nihil est. Eum similique neque autem ut.</h4>
-                        <p>Ut rerum et autem vel. Et rerum molestiae aut sit vel incidunt sit at voluptatem. Saepe dolorem et sed voluptate impedit. Ad et qui sint at qui animi animi rerum.</p>
-                      </div>
-                    </div><!-- End slide item -->
+                    {% endfor %}
     
                   </div>
                   <div class="swiper-pagination"></div>
@@ -140,9 +118,9 @@
           <div class="col-lg-12 d-flex justify-content-center">
             <ul id="portfolio-flters">
               <li data-filter="*" class="filter-active">All</li>
-              <li data-filter=".filter-app">Under Ground Fibre Installation</li>
-              <li data-filter=".filter-card">Aerial Installation</li>
-              <li data-filter=".filter-web">Office to Office Connections</li>
+              <li data-filter=".filter-app">FTTX</li>
+              <li data-filter=".filter-card">Wireless</li>
+              <li data-filter=".filter-web">Fibre To Home</li>
             </ul>
           </div>
         </div>
@@ -245,48 +223,49 @@
     </section><!-- End Portfoio Section -->
 
     <!-- ======= Help Section ======= -->
-    <section id="help" class="section-bg">
+<!--    <section id="help" class="section-bg">-->
 
-      <div class="container" data-aos="fade-up">
+<!--      <div class="container" data-aos="fade-up">-->
 
 
-        <div class="section-title">
-          <h3>How can we help you today?</h3>
-        </div>
+<!--        <div class="section-title">-->
+<!--          <h3>How can we help you today?</h3>-->
+<!--        </div>-->
 
-        <div class="row help-info">
+<!--        <div class="row help-info">-->
 
-          <div class="col-md-4">
-            <div class="help-address">
-              <a href="{% url 'soon'%}">
-                <img src="{% static 'img/svgs/service.svg'%}" style="width:48px;height:48px;"/>
-                <h3>Request A Service</h3>
-              </a>
-            </div>
-          </div>
+<!--          <div class="col-md-4">-->
+<!--            <div class="help-address">-->
+<!--              <a href="{% url 'soon'%}">-->
+<!--                <img src="{% static 'img/svgs/service.svg'%}" style="width:48px;height:48px;"/>-->
+<!--                <h3>Request A Service</h3>-->
+<!--              </a>-->
+<!--            </div>-->
+<!--          </div>-->
 
-          <div class="col-md-4">
-            <div class="help-phone">
-              <a href="{% url 'soon'%}">
-                <img src="{% static 'img/svgs/support.svg'%}"/>
-                <h3>Get Help Online</h3>
-              </a>
-            </div>
-          </div>
+<!--          <div class="col-md-4">-->
+<!--            <div class="help-phone">-->
+<!--              <a href="{% url 'soon'%}">-->
+<!--                <img src="{% static 'img/svgs/support.svg'%}"/>-->
+<!--                <h3>Get Help Online</h3>-->
+<!--              </a>-->
+<!--            </div>-->
+<!--          </div>-->
 
-          <div class="col-md-4">
-            <div class="help-email">
-              <a href="{% url 'soon'%}">
-                <img src="{% static 'img/svgs/consultation.svg'%}" style="width:48px;height:48px;"/>
-                <h3>Consultation</h3>
-              </a>
-            </div>
-          </div>
+<!--          <div class="col-md-4">-->
+<!--            <div class="help-email">-->
+<!--              <a href="{% url 'soon'%}">-->
+<!--                <img src="{% static 'img/svgs/consultation.svg'%}" style="width:48px;height:48px;"/>-->
+<!--                <h3>Consultation</h3>-->
+<!--              </a>-->
+<!--            </div>-->
+<!--          </div>-->
 
-        </div>
+<!--        </div>-->
 
-      </div>
-    </section><!-- End Contact Section -->
+<!--      </div>-->
+<!--    </section>-->
+    <!-- End Contact Section -->
 
 
     <!-- ======= Our Clients Section ======= -->
@@ -299,53 +278,60 @@
 
         <div class="row no-gutters clients-wrap clearfix" data-aos="fade-up">
 
+          {% for client in clients%}
           <div class="col-lg-3 col-md-4 col-6">
             <div class="client-logo">
-              <img src="{% static 'img/clients/airtel.png' %}" class="img-fluid" alt="">
+              <img src="{{client.client_image.url}}" class="img-fluid" alt="">
             </div>
           </div>
+          {% endfor %}
+<!--          <div class="col-lg-3 col-md-4 col-6">-->
+<!--            <div class="client-logo">-->
+<!--              <img src="{% static 'img/clients/airtel.png' %}" class="img-fluid" alt="">-->
+<!--            </div>-->
+<!--          </div>-->
 
-          <div class="col-lg-3 col-md-4 col-6">
-            <div class="client-logo">
-              <img src="{% static 'img/clients/centenary.png' %}" class="img-fluid" alt="">
-            </div>
-          </div>
+<!--          <div class="col-lg-3 col-md-4 col-6">-->
+<!--            <div class="client-logo">-->
+<!--              <img src="{% static 'img/clients/centenary.png' %}" class="img-fluid" alt="">-->
+<!--            </div>-->
+<!--          </div>-->
 
-          <div class="col-lg-3 col-md-4 col-6">
-            <div class="client-logo">
-              <img src="{% static 'img/clients/mtn.png' %}" class="img-fluid" alt="">
-            </div>
-          </div>
+<!--          <div class="col-lg-3 col-md-4 col-6">-->
+<!--            <div class="client-logo">-->
+<!--              <img src="{% static 'img/clients/mtn.png' %}" class="img-fluid" alt="">-->
+<!--            </div>-->
+<!--          </div>-->
 
-          <div class="col-lg-3 col-md-4 col-6">
-            <div class="client-logo">
-              <img src="{% static 'img/clients/stanbic.png' %}" class="img-fluid" alt="">
-            </div>
-          </div>
+<!--          <div class="col-lg-3 col-md-4 col-6">-->
+<!--            <div class="client-logo">-->
+<!--              <img src="{% static 'img/clients/stanbic.png' %}" class="img-fluid" alt="">-->
+<!--            </div>-->
+<!--          </div>-->
 
-          <div class="col-lg-3 col-md-4 col-6">
-            <div class="client-logo">
-              <img src="{% static 'img/clients/utl.png' %}" class="img-fluid" alt="">
-            </div>
-          </div>
+<!--          <div class="col-lg-3 col-md-4 col-6">-->
+<!--            <div class="client-logo">-->
+<!--              <img src="{% static 'img/clients/utl.png' %}" class="img-fluid" alt="">-->
+<!--            </div>-->
+<!--          </div>-->
 
-          <div class="col-lg-3 col-md-4 col-6">
-            <div class="client-logo">
-              <img src="{% static 'img/clients/umeme.png' %}" class="img-fluid" alt="">
-            </div>
-          </div>
+<!--          <div class="col-lg-3 col-md-4 col-6">-->
+<!--            <div class="client-logo">-->
+<!--              <img src="{% static 'img/clients/umeme.png' %}" class="img-fluid" alt="">-->
+<!--            </div>-->
+<!--          </div>-->
 
-          <div class="col-lg-3 col-md-4 col-6">
-            <div class="client-logo">
-              <img src="{% static 'img/clients/stanbic.png' %}" class="img-fluid" alt="">
-            </div>
-          </div>
+<!--          <div class="col-lg-3 col-md-4 col-6">-->
+<!--            <div class="client-logo">-->
+<!--              <img src="{% static 'img/clients/stanbic.png' %}" class="img-fluid" alt="">-->
+<!--            </div>-->
+<!--          </div>-->
 
-          <div class="col-lg-3 col-md-4 col-6">
-            <div class="client-logo">
-              <img src="{% static 'img/clients/client-8.png' %}" class="img-fluid" alt="">
-            </div>
-          </div>
+<!--          <div class="col-lg-3 col-md-4 col-6">-->
+<!--            <div class="client-logo">-->
+<!--              <img src="{% static 'img/clients/client-8.png' %}" class="img-fluid" alt="">-->
+<!--            </div>-->
+<!--          </div>-->
 
         </div>
 

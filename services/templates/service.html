@@ -3,10 +3,60 @@
 {% block service %}
 <main id="main">
 
+
+      <!-- ======= Service Featuring ======= -->
+    <section id="about-us" class="about-us">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row content">
+          <div class="col-lg-6" data-aos="fade-right" >
+            <div style="height:100px" class="spacer"></div>
+            <h3 class="mt-5"><i>{{desc.description}}</i></h3>
+          </div>
+<!--          style="position:relative;"-->
+<!--          style="position:absolute;top:30%;transform: translateY(-50%);"-->
+          {% if not sliders %}
+          <div class="col-lg-6 pt-4 pt-lg-0" data-aos="fade-left">
+            <img src="{{desc.sideImage.url}}" style="max-height: 350px ;"/>
+          </div>
+          {% else %}
+          <div class="col-lg-6 pt-4 pt-lg-0 slides  position-relative" data-aos="fade-left">
+            <div class="slides-1 swiper" id="swiper">
+              <div class="swiper-wrapper">
+                {% for image in sliders %}
+                <div class="swiper-slide">
+                  <div class="item">
+                    <img src="{{image.sideImage.url}}" class="img-fluid" alt="">
+                  </div>
+                </div><!-- End slide item -->
+                {% endfor %}
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+<!--            <div class="swiper-button-prev"></div>-->
+<!--            <div class="swiper-button-next"></div>-->
+          </div>
+          {% endif %}
+        </div>
+        <div class="row content mt-5">
+          <div class="col-lg-6 pt-4 pt-lg-0" data-aos="fade-right">
+            <img src="{{desc.sideImage.url}}" style="max-height: 350px ;"/>
+          </div>
+          <div class="col-lg-6" data-aos="fade-right" >
+            <div style="height:100px" class="spacer"></div>
+            <h3 class="align-middle"><i>{{desc1.description}}</i></h3>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Service Featuring -->
+
     <!-- ======= Services Cards Section ======= -->
     <section id="services-cards" class="services-cards">
       <div class="container" data-aos="fade-up">
-
+        <div class="section-title">
+          <h2>We Also Offer</h2>
+        </div>
         <div class="row gy-4">
 
           {% for card in cards %}
@@ -33,6 +83,7 @@
 
       </div>
     </section><!-- End Services Cards Section -->
+
 
   </main><!-- End #main -->
 {% endblock service %}

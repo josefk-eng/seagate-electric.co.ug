@@ -66,14 +66,14 @@
         <ul>
           <li><a href="{% url 'home' %}" class = "{% if request.resolver_match.url_name == "home" %}active{% endif %}">Home</a></li>
           <li><a href="{% url 'about'%}" class = "{% if request.resolver_match.url_name == "about" %}active{% endif %}">The Company</a></li>
-          <li class="dropdown"><a href="" class = "{% if request.resolver_match.url_name == "services" or request.resolver_match.url_name == "service"  %}active{% endif %}"><span>Our Services</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
+          <li ><a href="{% url 'service' id=services.id %}" class = "{% if request.resolver_match.url_name == "services" or request.resolver_match.url_name == "service"  %}active{% endif %}">Our Services</i></a>
+            {% comment %}<ul>
               {% for service in services %}
                 <li><a href="{% url 'service' id=service.id %}">{{service.name}}</a></li>
               {% endfor %}
-              
-              {% comment %} <li><a href="{% url 'service'%}">Radio And Wireless Networks</a></li> {% endcomment %}
-              {% comment %} <li class="dropdown"><a href="{% url 'soon'%}"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
+
+               <li><a href="{% url 'service'%}">Radio And Wireless Networks</a></li>
+               <li class="dropdown"><a href="{% url 'soon'%}"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
                 <ul>
                   <li><a href="{% url 'soon'%}">Deep Drop Down 1</a></li>
                   <li><a href="{% url 'soon'%}">Deep Drop Down 2</a></li>
@@ -81,8 +81,8 @@
                   <li><a href="{% url 'soon'%}">Deep Drop Down 4</a></li>
                   <li><a href="{% url 'soon'%}">Deep Drop Down 5</a></li>
                 </ul>
-              </li> {% endcomment %}
-            </ul>
+              </li>
+            </ul>{% endcomment %}
           </li>
           <li class="dropdown"><a href="" class = "{% if request.resolver_match.url_name == "product" or request.resolver_match.url_name == "products"  %}active{% endif %}"><span>Our Products</span> <i class="bi bi-chevron-down"></i></a>
             <ul>

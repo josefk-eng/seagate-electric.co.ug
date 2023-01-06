@@ -45,8 +45,9 @@ INSTALLED_APPS = [
     'services',
     'soon',
     'products',
-    'tools'
+    'tools',
 ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

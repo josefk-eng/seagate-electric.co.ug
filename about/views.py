@@ -7,5 +7,5 @@ from services.models import Service
 def about(request):
     products = Product.objects.all()
     tools = Tool.objects.all()
-    services = Service.objects.all()
+    services = Service.objects.all()[1]
     return render(request,'company.html', {"products":products,"tools":tools,"services":services})

@@ -7,19 +7,19 @@
     <div class="breadcrumbs d-flex align-items-center" style="background-image: url('../../static/img/tower.png');">
       <div class="container position-relative d-flex flex-column align-items-center">
 
-        {% if request.resolver_match.url_name == "service" %}
-          <h2>{{service.name}}</h2>
-          {% else %}
-            <h2>Services</h2>
-          {% endif %}
+<!--        {% if request.resolver_match.url_name == "service" %}-->
+          <h2>Our Services</h2>
+<!--          {% else %}-->
+<!--            <h2>Services</h2>-->
+<!--          {% endif %}-->
         <ol>
           <li><a href="{% url 'home' %}">Home</a></li>
-          {% if request.resolver_match.url_name == "service" %} 
-          <li><a href="{% url 'services' %}">Our Services</a></li>
-          <li>{{service.name}}</li>
-          {% else %}
+<!--          {% if request.resolver_match.url_name == "service" %} -->
           <li>Our Services</li>
-          {% endif %}
+<!--          <li>{{service.name}}</li>-->
+<!--          {% else %}-->
+          <li>Our Services</li>
+<!--          {% endif %}-->
         </ol>
 
       </div>
@@ -32,91 +32,28 @@
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-          <h2>Testimonials</h2>
+            <h2>Testimonials</h2>
+            <p>Some Of Our Client's Remarks</p>
         </div>
-
         <div class="slides-3 swiper" data-aos="fade-up" data-aos-delay="100">
           <div class="swiper-wrapper">
-
-            <div class="swiper-slide">
+            {% for test in tests %}
+              <div class="swiper-slide">
               <div class="testimonial-item">
                 <div class="stars">
                   <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
                 </div>
                 <p>
-                  Communications links have drastically improved at our sites in different locations all thanks to Seagate Electric
+                  {{test.comment}}
                 </p>
                 <div class="profile mt-auto">
                   <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
-                  <h3>Modi Akman</h3>
-                  <h4>Ceo &amp; Founder</h4>
+                  <h3>{{test.owner}}</h3>
+                  <h4>{{test.position}}</h4>
                 </div>
               </div>
             </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                </div>
-                <p>
-                  We had no idea how our clients would be connected together due to the architecture of infrastructure between them, but seagate electric has done the job well in working around all these geographic limitations
-                </p>
-                <div class="profile mt-auto">
-                  <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
-                  <h3>Kenail Abbey</h3>
-                  <h4>Operations Manager</h4>
-                </div>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                </div>
-                <p>
-                  Seagate electric has indeed proved to be artistic in its operations during construction and field work.
-                </p>
-                <div class="profile mt-auto">
-                  <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
-                  <h3>Jena Aggey</h3>
-                  <h4>Store Owner</h4>
-                </div>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                </div>
-                <p>
-                  Our Business has seen a drastic descrease in telecommunications costs all thanks to Seagate Electric.
-                </p>
-                <div class="profile mt-auto">
-                  <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
-                  <h3>Mathew Okoli</h3>
-                  <h4>Operations Manager</h4>
-                </div>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                </div>
-                <p>
-                  Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
-                </p>
-                <div class="profile mt-auto">
-                  <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
-                  <h3>John Larson</h3>
-                  <h4>Entrepreneur</h4>
-                </div>
-              </div>
-            </div><!-- End testimonial item -->
+            {% endfor %}
 
           </div>
           <div class="swiper-pagination"></div>

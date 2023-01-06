@@ -1224,10 +1224,9 @@ section {
 --------------------------------------------------------------*/
 .about-us .content h2 {
   font-weight: 700;
-  font-size: 42px;
-  line-height: 60px;
+  font-size: 35px;
+  line-height: 50px;
   margin-bottom: 20px;
-  text-transform: uppercase;
 }
 
 .about-us .content h3 {
@@ -1256,6 +1255,10 @@ section {
 
 .about-us .content p:last-child {
   margin-bottom: 0;
+}
+
+#about-us{
+  margin-right: 20px;
 }
 
 /*--------------------------------------------------------------
@@ -2820,4 +2823,84 @@ section {
   color: #060c22;
   font-style: italic;
   font-size: 15px;
+}
+
+/*--------------------------------------------------------------
+# Products types Section
+--------------------------------------------------------------*/
+#gallery {
+  padding: 10px;
+  overflow: hidden;
+}
+
+#gallery .swiper-pagination {
+  margin-top: 20px;
+  position: relative;
+}
+
+#gallery .swiper-pagination .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background-color: #fff;
+  opacity: 1;
+  border: 1px solid #f82249;
+}
+
+#gallery .swiper-pagination .swiper-pagination-bullet-active {
+  background-color: #f82249;
+}
+
+#gallery .swiper-slide-active {
+  text-align: center;
+}
+
+@media (min-width: 992px) {
+  #gallery .swiper-wrapper {
+    padding: 40px 0;
+  }
+
+  #gallery .swiper-slide-active {
+    border: 5px solid #f82249;
+    padding: 4px;
+    background: #fff;
+    z-index: 1;
+    transform: scale(1.15);
+    margin-top: 6px;
+  }
+}
+
+.rating-box {
+    width: 130px;
+    height: 130px;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: #FBC02D;
+    color: #fff
+}
+
+.rating-label {
+    font-weight: bold
+}
+
+.rating-bar {
+    width: 300px;
+    padding: 8px;
+    border-radius: 5px
+}
+
+.star-active {
+    color: #FBC02D;
+    margin-top: 10px;
+    margin-bottom: 10px
+}
+
+.star-active:hover {
+    color: #F9A825;
+    cursor: pointer
+}
+
+.star-inactive {
+    color: #CFD8DC;
+    margin-top: 10px;
+    margin-bottom: 10px
 }
