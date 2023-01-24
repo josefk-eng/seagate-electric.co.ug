@@ -1,6 +1,6 @@
 {% extends 'master.html'%}
 {% load static%}
-
+{% load about_extras %}
 {% block content%}
 
    <!-- ======= Breadcrumbs ======= -->
@@ -10,8 +10,8 @@
       <h2>{{tool.name}}</h2>
       <ol>
         <li><a href="/">Home</a></li>
-        <li><a href="{% url 'tools'%}">Our Tools</a></li>
-        <li>{{tool.name}}</li>
+        <li><a href="">Our Tools</a></li>
+        <li style="color:#fff">{{tool.name}}</li>
       </ol>
 
     </div>
@@ -28,33 +28,65 @@
               <img src="{{tool.toolImage.url}}" alt="{{tool.name}}" class="img-fluid">
             </div>
   
-            <div class="col-md-4">
+            <div class="col-md-4 content">
               <div class="details">
                 <h2>{{tool.name}}</h2>
                   <p>{{tool.big_desc}}</p>
-            </ul>
+              </div>
+                <div class="details">
+                <h4>Specifications</h4>
+                  <ul style="list-style: none;">
+                      {% if tool.specification %}
+                          {% for spec in tool.specification|strengths_list:","%}
+                            <li><i class="ri-check-double-line"></i>{{spec}}</li>
+                          {% endfor %}
+                      {% endif %}
+                  </ul>
               </div>
             </div>
-            <div class="col-md-4">
-              <div class="details">
-                <h2>Specs</h2>
-                                    <ul style="list-style: none;">
-              <li><i class="ri-check-double-line"></i> Specification One</li>
-              <li><i class="ri-check-double-line"></i> Specification Two</li>
-              <li><i class="ri-check-double-line"></i> Specification Three</li>
-
-<!--                <div class="col-md-8 d-flex flex-column">-->
-<!--                        <div class="rating-box text-center">-->
-<!--                            <h1 class="pt-4">4.0</h1>-->
-<!--                            <i class="">out of 5</i>-->
-<!--                        </div>-->
-<!--                        <div> <span class="bi bi-star star-active mx-1"></span> <span class="bi bi-star star-active mx-1"></span> <span class="bi bi-star star-active mx-1"></span> <span class="bi bi-star star-active mx-1"></span> <span class="bi bi-star star-inactive mx-1"></span> </div>-->
-<!--                </div>-->
+            <div class="col-lg-4 content">
+                <div class="sidebar p-3 d-flex justify-content-center">
+                    <div class="details">
+                <h4>Features</h4>
+                  <ul style="list-style: none;">
+                      {% if tool.features %}
+                          {% for feat in tool.features|strengths_list:","%}
+                            <li><i class="ri-check-double-line"></i>{{feat}}</li>
+                          {% endfor %}
+                      {% endif %}
+                  </ul>
               </div>
+                </div>
             </div>
   
           </div>
         </div>
   
       </section>
+
+    <!-- Related items section-->
+    <section class="py-5 bg-light related">
+        <div class="container px-4 px-lg-5">
+            <h2 class="fw-bolder mb-4">Other Tools</h2>
+            <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 ">
+                {% for mytool in tools %}
+                    {% if mytool != tool %}
+
+                        <div class="col-lg-4 col-md-6 mt-4 mt-md-0" data-aos="fade-up" data-aos-delay="200">
+                          <div class="box featured">
+                            <h3>{{mytool}}</h3>
+                            <div class="img-wrapper d-flex justify-content-center">
+                              <img src="{{mytool.toolImage.url}}" alt="{{mytool.name}}" class="img-fluid">
+                            </div>
+                            <div class="btn-wrap">
+                              <a href="{% url 'tool' id=mytool.id%}" class="btn-view">Details</a>
+                            </div>
+                          </div>
+                        </div>
+
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </section>
 {% endblock %}

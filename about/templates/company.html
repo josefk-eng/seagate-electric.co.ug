@@ -1,16 +1,16 @@
 {% extends 'master.html' %}
 {% load static %}
-
+{% load about_extras %}
 {% block content %}
 
     <!-- ======= Breadcrumbs ======= -->
-    <div class="breadcrumbs d-flex align-items-center" style="background-image: url('../../static/img/about.jpeg');">
+    <div class="breadcrumbs d-flex align-items-center" style="background-image: url('../../static/img/cables.jpeg');">
         <div class="container position-relative d-flex flex-column align-items-center">
   
           <h2>Company</h2>
           <ol>
             <li><a href="/">Home</a></li>
-            <li>About Us</li>
+            <li style="color:#fff">About Us</li>
           </ol>
   
         </div>
@@ -22,25 +22,22 @@
 
         <div class="row content">
           <div class="col-lg-6" data-aos="fade-right">
-            <h2>SeaGate Electric</h2>
-            <h5>We Provide Telecommunication Infrastructure services</h5>
+            <h2>{{about.header}}</h2>
+            <h5>{{about.subHeader}}</h5>
             <p>
-                Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                culpa qui officia deserunt mollit anim id est laborum
-              </p>
+                {{about.description}}
+            </p>
               <ul>
-                <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequa</li>
-                <li><i class="ri-check-double-line"></i> Duis aute irure dolor in reprehenderit in voluptate velit</li>
-                <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in</li>
+                {% for strength in about.service_list|strengths_list:","%}
+                  <li><i class="ri-check-double-line"></i>{{strength}}</li>
+                {% endfor %}
               </ul>
               <p class="fst-italic">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                magna aliqua.
+                {{about.footNote}}
               </p>
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0" data-aos="fade-left">
-           <img src="{% static 'img/employee_image.jpeg' %}" style="max-height: 400px;"/>
+           <img src="{{about.sideImage.url}}" style="max-height: 400px;"/>
           </div>
         </div>
 
@@ -61,7 +58,7 @@
           <div class="icon-box">
             <div class="icon"><i class="bi bi-eyeglasses"></i></div>
             <h4><a href="">Our Vision</a></h4>
-            <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+            <p>{{about.vision}}</p>
           </div>
         </div>
 
@@ -69,7 +66,7 @@
           <div class="icon-box">
             <div class="icon"><i class="bi bi-bullseye"></i></div>
             <h4><a href="">Our Mission</a></h4>
-            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
+            <p>{{about.mission}}</p>
           </div>
         </div>
 
@@ -77,7 +74,7 @@
           <div class="icon-box">
             <div class="icon"><i class="bi bi-balloon"></i></div>
             <h4><a href="">Core Values</a></h4>
-            <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
+            <p>{{about.values}}</p>
           </div>
         </div>
       </div>

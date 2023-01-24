@@ -8,49 +8,45 @@
         <h2>{{product.name}}</h2>
         <ol>
         <li><a href="{% url 'home'%}">Home</a></li>
-        <li><a href="{% url 'products'%}">Our Products</a></li>
-        <li>{{product.name}}</li>
+        <li><a href="{% url 'products'%}">Products</a></li>
+        <li style="color:#fff">{{product.name}}</li>
         </ol>
 </div>
 </div><!-- End Breadcrumbs -->
         <!-- Product section-->
-        <section class="">
+        <section class="" id="hotels">
             <div class="px-4 px-lg-5 ">
                 <div class="row gx-4 gx-lg-5 align-items-center">
-                    <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="{{product.image.url}}" alt="..." /></div>
-                    <div class="col-md-6">
-                        <div class="small mb-1">SKU: BST-498</div>
-                        <h1 class="display-5 fw-bolder">{{product.name}}</h1>
-                        <div class="fs-5 mb-5">
-                            <span class="text-decoration-line-through">Shs0.00</span>
-                            <span>{{product.price}}</span>
-                        </div>
-                        <p class="lead">{{product.description}}</p>
-                        <div class="d-flex">
-                            <input class="form-control text-center me-3" id="inputQuantity" type="num" value="1" style="max-width: 3rem" />
-                            <button class="btn btn-outline-dark flex-shrink-0" type="button">
-                                <i class="bi-cart-fill me-1"></i>
-                                Create An Order
-                            </button>
+                    <div class="col-md-4 order-md-0 order-2">
+                        <div class="sidebar d-flex justify-content-center">
+                            <ul class="image_list">
+                        <li data-image="{{product.image.url}}"><img src="{{product.image.url}}" alt="" class="img-fluid p-5"></li>
+                        <li data-image="{{product.image.url}}"><img src="{{product.image.url}}" alt="" class="img-fluid p-5"></li>
+                        <li data-image="{{product.image.url}}"><img src="{{product.image.url}}" alt="" class="img-fluid p-5"></li>
+                    </ul>
                         </div>
                     </div>
-                </div>
+                    <div class="col-md-8">
+<!--                        <img class="card-img-top mb-5 mb-md-0" src="{{product.image.url}}" alt="..." />-->
+                        <div class="hotel">
+                          <div class="hotel-img">
+                            <img src="{{product.image.url}}" alt="Hotel 1" class="img-fluid">
+                          </div>
+                          <h3><a href="#">{{product.name}}</a></h3>
+                          <div class="stars">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                          </div>
+                          <p>{{product.description}}</p>
+                        </div>
+                    </div>
+            </div>
             </div>
         </section>
 
-
-    <!-- ======= Gallery Section ======= -->
-    <section id="gallery">
-      <div class="gallery-slider swiper">
-        <div class="swiper-wrapper align-items-center">
-          <div class="swiper-slide"><a href="" class="gallery-lightbox"><img src="{{product.image.url}}" class="img-fluid" alt=""></a></div>
-          <div class="swiper-slide"><a href="" class="gallery-lightbox"><img src="{{product.image.url}}" class="img-fluid" alt=""></a></div>
-          <div class="swiper-slide"><a href="" class="gallery-lightbox"><img src="{{product.image.url}}" class="img-fluid" alt=""></a></div>
-        </div>
-<!--        <div class="swiper-pagination"></div>-->
-      </div>
-
-    </section><!-- End Gallery Section -->
         <!-- Related items section-->
         <section class="py-5 bg-light">
             <div class="container px-4 px-lg-5 mt-5">
@@ -64,7 +60,7 @@
                                     <!-- Sale badge-->
                                     <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
                                     <!-- Product image-->
-                                    <img class="card-img-top" src="{{myproduct.image.url}}" alt="..." />
+                                    <img class="card-img-top p-3" src="{{myproduct.image.url}}" alt="..." />
                                     <!-- Product details-->
                                     <div class="card-body p-4">
                                         <div class="text-center">

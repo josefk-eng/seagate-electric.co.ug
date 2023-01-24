@@ -14,7 +14,7 @@
               <div class="carousel-content animate__animated animate__fadeInUp text-center">
                 <h2 >{{slider.header}}</span></h2>
                 <p>{{slider.description}}</p>
-                <div><a href="{% url 'service' id=slider.button_link %}" class="btn-get-started">{{slider.button_text}}</a></div>
+                <div><a href="{% url slider.button_link id=slider.optionalId %}" class="btn-get-started">{{slider.button_text}}</a></div>
               </div>
             </div>
           </div>
@@ -44,21 +44,17 @@
 
         <div class="row content">
           <div class="col-lg-6" data-aos="fade-right">
-            <h2>Welcome To Sea Gate Electric</h2>
-            <h3>Your One Stop Solution For All Your Telecommunications Infrastructure Needs</h3>
+            <h2>Reliable Services</h2>
+<!--            <h3>Your One Stop Solution For All Your Telecommunications Infrastructure Needs</h3>-->
             <p>
-              We analyzing customer business requirements through proper consultations, and implementation of customized solutions. We are committed to the pursuit of excellence, enhanced performance, and advancement of our customers businesses.
+              Over the years we have worked with ISP and telecom operators to bring their services close to where people reside or work. Our various engineering teams are experienced in most common transmission systems delivering Voice, data and video over high-speed transmission links
             </p>
             <ul>
-              <li><i class="ri-check-double-line"></i> Fibre To Home</li>
-              <li><i class="ri-check-double-line"></i> Radio and wireless telecommunications</li>
-              <li><i class="ri-check-double-line"></i>Site to Site</li>
-              <li><i class="ri-check-double-line"></i> FTTX</li>
+              <li><i class="ri-check-double-line"></i> Radio and wireless network installation.</li>
+              <li><i class="ri-check-double-line"></i> Fibre to home / between buildings.</li>
+              <li><i class="ri-check-double-line"></i>3G/4G RBS Installations Configurations, Commissioning and Network Optimization.</li>
+              <li><i class="ri-check-double-line"></i> Microwave link installation to RF and baseband troubleshooting.</li>
             </ul>
-            {% comment %} <p class="fst-italic">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-              magna aliqua.
-            </p> {% endcomment %}
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0" data-aos="fade-left">
             <img src="{% static 'img/inspire.jpeg' %}" style="max-height: 450px ;"/>
@@ -107,121 +103,45 @@
         </section><!-- End Why Choose Us Section -->
 
     <!-- ======= Portfoio Section ======= -->
-    <section id="portfolio" class="portfoio">
+    {% comment %}<section id="portfolio" class="portfoio">
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
           <h2>Portfolio</h2>
-          <p>Our experience in telecommunications is un matched, we link up offices, business sites far apart, data centers and so on. Our team of experienced workers is here to handle all your telecommunications needs </p>
+          <p>Our most recent projects include overhead and underground fibre installations</p>
         </div>
 
         <div class="row">
           <div class="col-lg-12 d-flex justify-content-center">
             <ul id="portfolio-flters">
               <li data-filter="*" class="filter-active">All</li>
-              <li data-filter=".filter-app">FTTX</li>
-              <li data-filter=".filter-card">Wireless</li>
-              <li data-filter=".filter-web">Fibre To Home</li>
+              {% for p in portfolios %}
+              <li data-filter=".filter-{{p.tag}}">{{p.tab_text}}</li>
+              {% endfor %}
             </ul>
           </div>
         </div>
 
         <div class="row portfolio-container">
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <img src="{% static 'img/portfolio/conduit.jpeg' %}" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Fibre installation</h4>
-              {% comment %} <p>App</p> {% endcomment %}
-              <a href="{% static 'img/portfolio/conduit.jpeg' %}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 1"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <img src="{% static 'img/portfolio/manOnTop.jpeg' %}" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Aerial</h4>
-              {% comment %} <p>Web</p> {% endcomment %}
-              <a href="{% static 'img/portfolio/manOnTop.jpeg' %}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
+          {% for p_image in p_images %}
+              <div class="col-lg-4 col-md-6 portfolio-item filter-{{p_image.tag}}">
+                <img src="{{p_image.image.url}}" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>{{p_image.title}}</h4>
+                  <p>{{p_image.description}}</p>
+                  <a href="{{p_image.image.url}}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 1"><i class="bx bx-plus"></i></a>
+                  <a href="{{p_image.link}}" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+                </div>
+              </div>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <img src="{% static 'img/portfolio/underground.jpeg' %}" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Underground</h4>
-              {% comment %} <p>App</p> {% endcomment %}
-              <a href="{% static 'img/portfolio/underground.jpeg' %}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 2"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <img src="{% static 'img/portfolio/portfolio-4.jpg' %}" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Card 2</h4>
-              <p>Card</p>
-              <a href="{% static 'img/portfolio/portfolio-4.jpg' %}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 2"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <img src="{% static 'img/portfolio/portfolio-4.jpg' %}" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Web 2</h4>
-              <p>Web</p>
-              <a href="{% static 'img/portfolio/portfolio-4.jpg' %}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 2"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <img src="{% static 'img/portfolio/portfolio-4.jpg' %}" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>App 3</h4>
-              <p>App</p>
-              <a href="{% static 'img/portfolio/portfolio-4.jpg' %}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 3"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <img src="{% static 'img/portfolio/portfolio-4.jpg' %}" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Card 1</h4>
-              <p>Card</p>
-              <a href="{% static 'img/portfolio/portfolio-4.jpg' %}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 1"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <img src="{% static 'img/portfolio/portfolio-4.jpg' %}" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Card 3</h4>
-              <p>Card</p>
-              <a href="{% static 'img/portfolio/portfolio-4.jpg' %}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 3"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <img src="{% static 'img/portfolio/portfolio-4.jpg' %}" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Web 3</h4>
-              <p>Web</p>
-              <a href="{% static 'img/portfolio/portfolio-4.jpg' %}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
+          {% endfor %}
 
         </div>
 
       </div>
-    </section><!-- End Portfoio Section -->
+    </section> {% endcomment %}<!-- End Portfoio Section -->
 
     <!-- ======= Help Section ======= -->
 <!--    <section id="help" class="section-bg">-->

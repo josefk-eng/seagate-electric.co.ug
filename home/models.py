@@ -8,7 +8,8 @@ class Slider(models.Model):
     header = models.CharField(max_length=100)
     description = models.CharField(max_length=500)
     button_text = models.CharField(max_length=50)
-    button_link = models.CharField(max_length=50)
+    button_link = models.CharField(max_length=50, blank=True, null=True)
+    optionalId = models.IntegerField( blank=True, null=True)
     
 
     class Meta:
@@ -58,7 +59,8 @@ class WhyChooseUS(models.Model):
     
 class PortFolio(models.Model):
     tab_text = models.CharField(max_length=100)
-    description = models.CharField(max_length=1000)
+    description = models.CharField(max_length=1000, blank=True, null=True)
+    tag = models.CharField(max_length=100)
 
     class Meta:
         verbose_name = _("PortFolio")
@@ -74,10 +76,11 @@ class PortFolio(models.Model):
 class PortfolioImages(models.Model):
     
     title = models.CharField(max_length=100)
-    description = models.CharField(max_length=1000)
-    link = models.CharField(max_length=50)
+    description = models.CharField(max_length=1000, blank=True, null=True)
+    link = models.CharField(max_length=100, blank=True, null=True)
     image = models.ImageField(upload_to="img/portfolio")
     portfolio = models.ForeignKey(PortFolio, verbose_name=_(""), on_delete=models.CASCADE)
+    tag = models.CharField(max_length=100)
 
     class Meta:
         verbose_name = _("PortfolioImages")

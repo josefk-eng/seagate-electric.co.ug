@@ -65,26 +65,15 @@
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
           <li><a href="{% url 'home' %}" class = "{% if request.resolver_match.url_name == "home" %}active{% endif %}">Home</a></li>
-          <li><a href="{% url 'about'%}" class = "{% if request.resolver_match.url_name == "about" %}active{% endif %}">The Company</a></li>
-          <li ><a href="{% url 'service' id=services.id %}" class = "{% if request.resolver_match.url_name == "services" or request.resolver_match.url_name == "service"  %}active{% endif %}">Our Services</i></a>
-            {% comment %}<ul>
-              {% for service in services %}
-                <li><a href="{% url 'service' id=service.id %}">{{service.name}}</a></li>
+          <li><a href="{% url 'about' id=0%}" class = "{% if request.resolver_match.url_name == "about" %}active{% endif %}">The Company</a></li>
+          <li class="dropdown" ><a href="{% url 'services' %}" class = "{% if request.resolver_match.url_name == "services" or request.resolver_match.url_name == "service"  %}active{% endif %}"><span>Services</span><i class="bi bi-chevron-down"></i></a>
+            <ul>
+              {% for s in services %}
+                <li><a href="{% url 'service' id=s.id %}">{{s.name}}</a></li>
               {% endfor %}
-
-               <li><a href="{% url 'service'%}">Radio And Wireless Networks</a></li>
-               <li class="dropdown"><a href="{% url 'soon'%}"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
-                <ul>
-                  <li><a href="{% url 'soon'%}">Deep Drop Down 1</a></li>
-                  <li><a href="{% url 'soon'%}">Deep Drop Down 2</a></li>
-                  <li><a href="{% url 'soon'%}">Deep Drop Down 3</a></li>
-                  <li><a href="{% url 'soon'%}">Deep Drop Down 4</a></li>
-                  <li><a href="{% url 'soon'%}">Deep Drop Down 5</a></li>
-                </ul>
-              </li>
-            </ul>{% endcomment %}
+            </ul>
           </li>
-          <li class="dropdown"><a href="" class = "{% if request.resolver_match.url_name == "product" or request.resolver_match.url_name == "products"  %}active{% endif %}"><span>Our Products</span> <i class="bi bi-chevron-down"></i></a>
+          <li class="dropdown"><a href="" class = "{% if request.resolver_match.url_name == "product" or request.resolver_match.url_name == "products"  %}active{% endif %}"><span>Products</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               {% for product in products %}
                 <li><a href="{% url 'product' id=product.id%}">{{product.name}}</a></li>
@@ -158,19 +147,19 @@
           <div class="col-lg-2 col-md-6 footer-links">
             <h4>Useful Links</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">The Company</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Our Services</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Our Products</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Our Tools</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'home' %}">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'about' id=0%}">The Company</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'service' id=1 %}">Our Services</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'product' id=2%}">Our Products</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'tool' id=1%}">Our Tools</a></li>
             </ul>
           </div>
 
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Our Services</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Fibre Infrastructure</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Radio And Wireless Networks</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'service' id=1%}">Fibre Infrastructure</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'service' id=2%}">Radio And Wireless Networks</a></li>
             </ul>
           </div>
 

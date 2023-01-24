@@ -70,16 +70,34 @@ class Testimonial(models.Model):
         return reverse("Testimonial_detail", kwargs={"pk": self.pk})
 
 
-class SlidingImage(models.Model):
-    description = models.ForeignKey(MainDescription, verbose_name=_(""), on_delete=models.CASCADE)
+class ServiceImage(models.Model):
+    service = models.ForeignKey(Service, verbose_name=_(""), on_delete=models.CASCADE)
     sideImage = models.ImageField(upload_to="img/SlidingImages")
+    name = models.CharField(max_length=100, default="service")
 
     class Meta:
         verbose_name = _("SlidingImage")
         verbose_name_plural = _("SlidingImage")
 
     def __str__(self):
-        return self.description.description
+        return self.name
 
     def get_absolute_url(self):
         return reverse("SlidingImage", kwargs={"pk": self.pk})
+
+
+class SideNotes(models.Model):
+    sideImage = models.ImageField(upload_to="img/sideNotes")
+    name = models.CharField(max_length=100)
+    description = models.CharField(max_length=1000, default="Image Description")
+    service = models.ForeignKey(Service, verbose_name=_(""), on_delete=models.CASCADE)
+
+    class Meta:
+        verbose_name = _("SideNotes")
+        verbose_name_plural = _("SideNotes")
+
+    def __str__(self):
+        return self.name
+
+    def get_absolute_url(self):
+        return reverse("SideNotes", kwargs={"pk": self.pk})

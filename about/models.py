@@ -5,7 +5,6 @@ from django.utils.translation import gettext as _
 
 # Create your models here.
 class CompanyBanner(models.Model):
-
     banner = models.ImageField(upload_to="img/banners")
 
     class Meta:
@@ -21,26 +20,28 @@ class CompanyBanner(models.Model):
     
 class AboutIntro(models.Model):
 
-    header = models.CharField(max_length=100)
-    subHeader = models.CharField(max_length=150)
+    header = models.CharField(max_length=100, default="Seagate Electric Co Ltd")
+    subHeader = models.CharField(max_length=150, default="Our Story")
     description = models.CharField(max_length=1000)
     service_list = models.CharField(max_length=1000)
     footNote = models.CharField(max_length=1000)
     sideImage = models.ImageField(upload_to="img/abt")
+    vision = models.CharField(max_length=500, blank=True, null=True)
+    mission = models.CharField(max_length=500, blank=True, null=True)
+    values = models.CharField(max_length=1000, blank=True, null=True)
 
     class Meta:
         verbose_name = _("AboutIntro")
         verbose_name_plural = _("AboutIntros")
 
     def __str__(self):
-        return self.name
+        return self.header
 
     def get_absolute_url(self):
         return reverse("AboutIntro_detail", kwargs={"pk": self.pk})
     
     
 class CompanyStatement(models.Model):
-
     icon = models.CharField(max_length=1000)
     header = models.CharField(max_length=100)
     description = models.CharField(max_length=1500)
