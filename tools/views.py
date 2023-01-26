@@ -10,9 +10,9 @@ def tools(request):
     services = Service.objects.all()
     return render(request,'tools.html', {"products":products,"tools":tools,"services":services})
 
-def tool(request, id):
+def tool(request, name):
     products = Product.objects.all()
     tools = Tool.objects.all()
-    tool = tools.get(id=id)
+    tool = tools.get(name=name)
     services = Service.objects.all()
     return render(request,'tool.html', {"products":products,"tools":tools, "tool":tool,"services":services})

@@ -7,8 +7,8 @@ from django.utils.translation import gettext as _
 class Tool(models.Model):
     toolImage = models.ImageField(upload_to="img/tools")
     name = models.CharField(max_length=150)
-    small_desc = models.CharField(max_length=1000)
-    big_desc = models.CharField(max_length=1500)
+    small_desc = models.CharField(max_length=1000, blank=True, null=True)
+    big_desc = models.CharField(max_length=1500, blank=True, null=True)
     features = models.CharField(max_length=1500, blank=True, null=True)
     specification = models.CharField(max_length=15000, blank=True, null=True)
 

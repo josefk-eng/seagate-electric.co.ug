@@ -42,6 +42,7 @@ class ServiceCard(models.Model):
     title = models.CharField(max_length=150)
     sideImage = models.ImageField(upload_to="img/serviceCards")
     description = models.CharField(max_length=2500)
+    icon = models.CharField(max_length=50, default="")
 
     class Meta:
         verbose_name = _("ServiceCard")
@@ -58,6 +59,9 @@ class Testimonial(models.Model):
     comment = models.CharField(max_length=2000)
     owner = models.CharField(max_length=100)
     position = models.CharField(max_length=100)
+    company = models.CharField(max_length=1502, default="")
+    rating = models.IntegerField(default=4)
+    priority = models.IntegerField(default=5)
 
     class Meta:
         verbose_name = _("Testimonial")

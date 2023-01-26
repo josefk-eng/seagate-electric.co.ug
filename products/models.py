@@ -6,11 +6,13 @@ from django.utils.translation import gettext as _
 class Product(models.Model):
 
     name = models.CharField(max_length=100)
-    description = models.CharField(max_length=2000)
+    description = models.CharField(max_length=2000, blank=True, null=True)
     price = models.DecimalField(max_digits=20,decimal_places=2, default=0.0)
     rating = models.IntegerField(default=0)
     type = models.CharField(max_length=200)
     image = models.ImageField(upload_to="img/products") #800 by 600
+    features = models.CharField(max_length=1500, blank=True, null=True)
+    specification = models.CharField(max_length=15000, blank=True, null=True)
 
     class Meta:
         verbose_name = _("Product")

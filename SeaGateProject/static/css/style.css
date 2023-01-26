@@ -3237,8 +3237,7 @@ ul {
 }
 
 .related .img-wrapper{
-    min-height:200px;
-
+    height:200px;
 }
 
 .related h3 {
@@ -3274,6 +3273,13 @@ ul {
   text-align: center;
 }
 
+.related .no-btn-wrap {
+  margin: 20px -20px -20px -20px;
+  padding: 20px 15px;
+  background: #fff;
+  text-align: center;
+}
+
 .related .btn-view {
   background: #0880e8;
   display: inline-block;
@@ -3296,3 +3302,46 @@ ul {
   color: #fff;
   background: #0880e8;
 }
+
+
+/*--------------------------------------------------------------
+# Services
+--------------------------------------------------------------*/
+.support .icon-box {
+  margin-bottom: 20px;
+  padding: 50px 40px;
+  border-radius: 6px;
+  background: #fff;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+.support .icon-box i {
+  float: left;
+  color: #f6b024;
+  font-size: 40px;
+  line-height: 0;
+}
+
+.support .icon-box h4 {
+  margin-left: 70px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+.support .icon-box h4 a {
+  color: #05579e;
+  transition: 0.3s;
+}
+
+.support .icon-box h4 a:hover {
+  color: #0880e8;
+}
+
+.support .icon-box p {
+  margin-left: 70px;
+  line-height: 24px;
+  font-size: 14px;
+  margin-bottom: 0;
+}
+

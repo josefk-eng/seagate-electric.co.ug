@@ -1,5 +1,6 @@
 {% extends 'master.html' %}
 {% load static %}
+{% load about_extras %}
 {% block content %}
 
 <!-- ======= Breadcrumbs ======= -->
@@ -8,38 +9,46 @@
         <h2>{{product.name}}</h2>
         <ol>
         <li><a href="{% url 'home'%}">Home</a></li>
-        <li><a href="{% url 'products'%}">Products</a></li>
+<!--        <li><a href="{% url 'products'%}">Products</a></li>-->
         <li style="color:#fff">{{product.name}}</li>
         </ol>
 </div>
 </div><!-- End Breadcrumbs -->
         <!-- Product section-->
-        <section class="" id="hotels">
+        <section class="content" id="hotels">
             <div class="px-4 px-lg-5 ">
                 <div class="row gx-4 gx-lg-5 align-items-center">
                     <div class="col-md-4 order-md-0 order-2">
-                        <div class="sidebar d-flex justify-content-center">
-                            <ul class="image_list">
-                        <li data-image="{{product.image.url}}"><img src="{{product.image.url}}" alt="" class="img-fluid p-5"></li>
-                        <li data-image="{{product.image.url}}"><img src="{{product.image.url}}" alt="" class="img-fluid p-5"></li>
-                        <li data-image="{{product.image.url}}"><img src="{{product.image.url}}" alt="" class="img-fluid p-5"></li>
-                    </ul>
+                        <div class="sidebar">
+                               <div class="details">
+                <h4 style="color: #152b79;">Features</h4>
+                  <ul style="list-style: none;">
+                      {% if product.features %}
+                          {% for feat in product.features|strengths_list:"#"%}
+                            <li><i class="ri-check-double-line"></i>{{feat}}</li>
+                          {% endfor %}
+                      {% endif %}
+                  </ul>
+                                   <br>
+
+                                   <h4 style="color: #152b79;">Specifications</h4>
+                  <ul style="list-style: none;">
+                      {% if product.specification %}
+                          {% for spec in product.specification|strengths_list:","%}
+                            <li><i class="ri-check-double-line"></i>{{spec}}</li>
+                          {% endfor %}
+                      {% endif %}
+                  </ul>
+              </div>
                         </div>
                     </div>
                     <div class="col-md-8">
 <!--                        <img class="card-img-top mb-5 mb-md-0" src="{{product.image.url}}" alt="..." />-->
                         <div class="hotel">
-                          <div class="hotel-img">
+                          <div class="hotel-img text-center">
                             <img src="{{product.image.url}}" alt="Hotel 1" class="img-fluid">
                           </div>
                           <h3><a href="#">{{product.name}}</a></h3>
-                          <div class="stars">
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                          </div>
                           <p>{{product.description}}</p>
                         </div>
                     </div>
@@ -47,41 +56,34 @@
             </div>
         </section>
 
-        <!-- Related items section-->
-        <section class="py-5 bg-light">
-            <div class="container px-4 px-lg-5 mt-5">
-                <h2 class="fw-bolder mb-4">Related products</h2>
-                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 ">
-                    {% for myproduct in products %}
-                        {% if myproduct != product %}
+    <!-- Related items section-->
+    <section class="py-5 bg-light related">
+        <div class="container px-4 px-lg-5">
+            <h2 class="fw-bolder mb-4">Other Products</h2>
+            <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 ">
+                {% for myproduct in products %}
+                    {% if myproduct != product %}
 
-                            <div class="col mb-5">
-                                <div class="card h-100">
-                                    <!-- Sale badge-->
-                                    <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
-                                    <!-- Product image-->
-                                    <img class="card-img-top p-3" src="{{myproduct.image.url}}" alt="..." />
-                                    <!-- Product details-->
-                                    <div class="card-body p-4">
-                                        <div class="text-center">
-                                            <!-- Product name-->
-                                            <h5 class="fw-bolder">{{myproduct.name}}</h5>
-                                            <!-- Product price-->
-                                            <span class="text-muted text-decoration-line-through">Shs.0.00</span>
-                                            Shs.{{myproduct.price}}/=
-                                        </div>
-                                    </div>
-                                    <!-- Product actions-->
-                                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="{% url 'product' id=myproduct.id%}">View Options</a></div>
-                                    </div>
-                                </div>
+                        <div class="col-lg-4 col-md-6 mt-4 mt-md-0" data-aos="fade-up" data-aos-delay="200">
+                          <div class="box featured">
+                            <h3>{{myproduct.name}}</h3>
+                            <div class="img-wrapper d-flex justify-content-center">
+                              <img src="{{myproduct.image.url}}" alt="{{myproduct.name}}" class="img-fluid">
                             </div>
-                        
-                        {% endif %}
-                    {% endfor %}
-                </div>
+                            <div class=" {% if myproduct.description %} btn-wrap {% else %} no-btn-wrap {% endif %}">
+                                {% if myproduct.description %}
+                                    <a href="{% url 'product' id=myproduct.id%}" class="btn-view">Details</a>
+                                {% else %}
+                                    <div style="padding: 8px 35px 10px 35px;"><i>~</i></div>
+                                {% endif %}
+                            </div>
+                          </div>
+                        </div>
+
+                    {% endif %}
+                {% endfor %}
             </div>
-        </section>
+        </div>
+    </section>
 
 {% endblock %}

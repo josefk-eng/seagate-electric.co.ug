@@ -10,7 +10,7 @@
       <h2>{{tool.name}}</h2>
       <ol>
         <li><a href="/">Home</a></li>
-        <li><a href="">Our Tools</a></li>
+<!--        <li><a href="">Our Tools</a></li>-->
         <li style="color:#fff">{{tool.name}}</li>
       </ol>
 
@@ -27,7 +27,7 @@
             <div class="col-md-4 text-center">
               <img src="{{tool.toolImage.url}}" alt="{{tool.name}}" class="img-fluid">
             </div>
-  
+
             <div class="col-md-4 content">
               <div class="details">
                 <h2>{{tool.name}}</h2>
@@ -72,14 +72,18 @@
                 {% for mytool in tools %}
                     {% if mytool != tool %}
 
-                        <div class="col-lg-4 col-md-6 mt-4 mt-md-0" data-aos="fade-up" data-aos-delay="200">
+                        <div class="col-lg-4 col-md-6 mt-4 mt-3" data-aos="fade-up" data-aos-delay="200">
                           <div class="box featured">
                             <h3>{{mytool}}</h3>
                             <div class="img-wrapper d-flex justify-content-center">
                               <img src="{{mytool.toolImage.url}}" alt="{{mytool.name}}" class="img-fluid">
                             </div>
-                            <div class="btn-wrap">
-                              <a href="{% url 'tool' id=mytool.id%}" class="btn-view">Details</a>
+                            <div class=" {% if mytool.big_desc %} btn-wrap {% else %} no-btn-wrap {% endif %}">
+                                {% if mytool.big_desc %}
+                                    <a href="{% url 'tool' name=mytool.name%}" class="btn-view">Details</a>
+                                {% else %}
+                                    <div style="padding: 8px 35px 10px 35px;"><i>~</i></div>
+                                {% endif %}
                             </div>
                           </div>
                         </div>

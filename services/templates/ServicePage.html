@@ -48,6 +48,30 @@
                       </div>
                     </div>
             </article>
+
+
+
+
+
+        <div class="row support">
+            {% for card in cards %}
+                  <div class="col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+                    <div class="icon-box">
+                      <i class="{{card.icon}}"></i>
+                      <h4><a href="#">{{card.title}}</a></h4>
+                      <p>{{card.description}}</p>
+                    </div>
+                  </div>
+            {% endfor %}
+        </div>
+
+
+
+
+
+
+
+
               {% comment %}{% endfor %}{% endcomment%}
 
           </div><!-- End blog entries list -->
