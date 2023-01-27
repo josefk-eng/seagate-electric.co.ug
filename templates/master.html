@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Home - Sea Gate Electric</title>
+  <title>{{request.resolver_match.url_name}} - Sea Gate Electric</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -64,9 +64,9 @@
 
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
-          <li><a href="{% url 'home' %}" class = "{% if request.resolver_match.url_name == "home" %}active{% endif %}">Home</a></li>
-          <li><a href="{% url 'about' id=0%}" class = "{% if request.resolver_match.url_name == "about" %}active{% endif %}">The Company</a></li>
-          <li class="dropdown" ><a href="{% url 'services' %}" class = "{% if request.resolver_match.url_name == "services" or request.resolver_match.url_name == "service"  %}active{% endif %}"><span>Services</span><i class="bi bi-chevron-down"></i></a>
+          <li><a href="{% url 'Home' %}" class = "{% if request.resolver_match.url_name == "Home" %}active{% endif %}">Home</a></li>
+          <li><a href="{% url 'About' id=0%}" class = "{% if request.resolver_match.url_name == "About" %}active{% endif %}">The Company</a></li>
+          <li class="dropdown" ><a href="" class = "{% if request.resolver_match.url_name == "services" or request.resolver_match.url_name == "service"  %}active{% endif %}"><span>Services</span><i class="bi bi-chevron-down"></i></a>
             <ul>
               {% for s in services %}
                 <li><a href="{% url 'service' id=s.id %}">{{s.name}}</a></li>
@@ -149,8 +149,8 @@
           <div class="col-lg-2 col-md-6 footer-links">
             <h4>Useful Links</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'home' %}">Home</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'about' id=0%}">The Company</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'Home' %}">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'About' id=0%}">The Company</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="{% url 'service' id=1 %}">Our Services</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="{% url 'product' id=2%}">Our Products</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="{% url 'tool' name='Sumitomo FC-6+' %}">Our Tools</a></li>
@@ -168,8 +168,9 @@
           <div class="col-lg-4 col-md-6 footer-newsletter">
             <h4>Want to stay in the loop?</h4>
             <p>Sign up for the latest deals, product news, and more from seagate electric</p>
-            <form action="" method="post">
-              <input type="email" name="email"><input type="submit" value="Sign Me Up">
+            <form action="{% url 'useremail' current=request.resolver_match.url_name %}" method="POST">
+              {% csrf_token %}
+              {{eform.email}}<input type="submit" value="Sign Me Up">
             </form>
           </div>
 

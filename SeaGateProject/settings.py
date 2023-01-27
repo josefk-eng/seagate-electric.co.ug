@@ -48,6 +48,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'countable_field',
+    'crispy_forms',
     'home',
     'about',
     'contact',
@@ -56,6 +58,8 @@ INSTALLED_APPS = [
     'products',
     'tools',
 ]
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 
 MIDDLEWARE = [

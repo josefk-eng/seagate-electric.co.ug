@@ -1,5 +1,6 @@
 from django.forms import ModelForm, TextInput, Textarea, EmailInput
-from .models import ContactMessage
+from .models import ContactMessage, UserEmail
+from countable_field.widgets import CountableWidget
 
 
 class ContactMessageForm(ModelForm):
@@ -14,11 +15,15 @@ class ContactMessageForm(ModelForm):
                     'name': 'subject'
                 }
             ),
-            'message': Textarea(
+            'message': CountableWidget(
                 attrs={
                     'class': 'form-control',
                     'name': 'message',
-                    'row': '10'
+                    'row': '10',
+                    'data-count': 'characters',
+                    'data-min-count': 0,
+                    'data-max-count': 1000,
+                    'data-count-direction': 'down'
                 }
             ),
             'name': TextInput(
@@ -33,6 +38,20 @@ class ContactMessageForm(ModelForm):
                     'class': 'form-control',
                     'name': 'email',
                     'id': 'email'
+                }
+            )
+        }
+
+
+class EmailForm(ModelForm):
+    class Meta:
+        model = UserEmail
+        fields = "__all__"
+        widgets = {
+            'email': EmailInput(
+                attrs={
+                    'name': 'email',
+                    'type':'email',
                 }
             )
         }

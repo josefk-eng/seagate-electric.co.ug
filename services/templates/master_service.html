@@ -13,7 +13,7 @@
             <h2>Services</h2>
           {% endif %}
         <ol>
-          <li><a href="{% url 'home' %}">Home</a></li>
+          <li><a href="{% url 'Home' %}">Home</a></li>
           {% if request.resolver_match.url_name == "service" %}
           <li style="color:#fff">Services</li>
           <li style="color:#fff">{{service.name}}</li>

@@ -2,6 +2,7 @@ from django.shortcuts import render
 from products.models import Product
 from tools.models import Tool
 from .models import Service, ServiceCard, MainDescription, Testimonial, ServiceImage, SideNotes
+from contact.forms import EmailForm
 
 
 # Create your views here.
@@ -16,7 +17,8 @@ def service(request, id):
     testimonials = Testimonial.objects.all()
     slidingImages = ServiceImage.objects.filter(service=id)
     notes = SideNotes.objects.filter(service=id)
-    return render(request, 'ServicePage.html', {"products":products,"tools":tools,"service":service,"cards":cards,"services":services,"desc":mainDesc,"desc1":mainDesc1,"tests":testimonials,"sliders":slidingImages,"sidenotes":notes})
+    e_form = EmailForm()
+    return render(request, 'ServicePage.html', {"products":products,"tools":tools,"service":service,"cards":cards,"services":services,"desc":mainDesc,"desc1":mainDesc1,"tests":testimonials,"sliders":slidingImages,"sidenotes":notes,"eform": e_form})
 
 def services(request):
     products = Product.objects.all()

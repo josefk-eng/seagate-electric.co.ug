@@ -2,6 +2,7 @@ from django.shortcuts import render
 from products.models import Product
 from tools.models import Tool
 from services.models import Service
+from contact.forms import EmailForm
 
 # Create your views here.
 def tools(request):
@@ -15,4 +16,5 @@ def tool(request, name):
     tools = Tool.objects.all()
     tool = tools.get(name=name)
     services = Service.objects.all()
-    return render(request,'tool.html', {"products":products,"tools":tools, "tool":tool,"services":services})
+    e_form = EmailForm()
+    return render(request,'tool.html', {"products":products,"tools":tools, "tool":tool,"services":services,"eform": e_form})
