@@ -6,6 +6,7 @@ from .forms import ContactMessageForm, EmailForm
 from django.contrib import messages
 from SeaGateProject.emailConfigs import sendMail
 
+
 # Create your views here.
 def contact(request):
     products = Product.objects.all()
@@ -13,7 +14,8 @@ def contact(request):
     services = Service.objects.all()
     form = ContactMessageForm()
     e_form = EmailForm()
-    return render(request,"contact.html", {"products":products,"tools":tools,"services":services,"form":form,"eform": e_form})
+    return render(request, "contact.html",
+                  {"products": products, "tools": tools, "services": services, "form": form, "eform": e_form})
 
 
 def feedback(request):
@@ -27,17 +29,18 @@ def feedback(request):
             sendMail(
                 subject=f"{request.POST['subject']} from {title}",
                 message=request.POST['message'],
-                rcpt_list=["josefkigozi@gmail.com",]
+                rcpt_list=["kigozijosefed1993@gmail.com", ]
             )
             messages.success(request, "Your message has been sent successfully. Thank You")
             return redirect('contact')
         else:
-            messages.error(request,"Could not send your message please try again")
+            messages.error(request, "Could not send your message please try again")
             return redirect('contact')
 
     else:
         print("Nothing is done")
         return redirect('contact')
+
 
 def useremail(request, current):
     if request.method == 'POST':
