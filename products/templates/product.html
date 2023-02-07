@@ -31,7 +31,7 @@
                   </ul>
                                    <br>
 
-                                   <h4 style="color: #152b79;">Specifications</h4>
+                   {%comment%}                <h4 style="color: #152b79;">Specifications</h4>
                   <ul style="list-style: none;">
                       {% if product.specification %}
                           {% for spec in product.specification|strengths_list:","%}
@@ -39,6 +39,7 @@
                           {% endfor %}
                       {% endif %}
                   </ul>
+		{%endcomment%}
               </div>
                         </div>
                     </div>
@@ -49,7 +50,15 @@
                             <img src="{{product.image.url}}" alt="Hotel 1" class="img-fluid">
                           </div>
                           <h3><a href="#">{{product.name}}</a></h3>
-                          <p>{{product.description}}</p>
+                           <p>{{ product.description|hint_delimiter:0 }}</p>
+			   
+                            {% if product.description|hint_delimiter:1 %}
+                               <p> <i>{{ product.description|hint_delimiter:1  }}</i></p>
+                            {% endif %}
+			   
+                            {% if product.description|hint_delimiter:2 %}
+                               <p> <i>~ {{ product.description|hint_delimiter:2  }}</i></p>
+                            {% endif %}
                         </div>
                     </div>
             </div>

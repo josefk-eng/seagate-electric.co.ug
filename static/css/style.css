@@ -2144,7 +2144,7 @@ section {
   text-align: left;
 }
 
-#footer .footer-newsletter form{
+#footer .footer-newsletter form input[type=email] {
   border: 0;
   padding: 4px 8px;
   width: calc(100% - 100px);
@@ -2686,7 +2686,6 @@ section {
   padding: 0 20px;
   margin-bottom: 20px;
   color: #060c22;
-  font-style: italic;
   font-size: 15px;
 }
 

@@ -9,5 +9,5 @@ def sendMail(subject,message,rcpt_list):
         message=message,
         from_email=settings.EMAIL_HOST_USER,
         recipient_list=rcpt_list,
-        fail_silently=False
+        fail_silently=True
     )
