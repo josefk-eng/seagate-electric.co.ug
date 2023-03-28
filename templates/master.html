@@ -69,7 +69,7 @@
   <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center">
 
-      <h1 class="logo me-auto"><a href="index.html"><img src = {% static 'img/logo.png'%} style="width:60px;height:100px;"></img></a></h1>
+      <h1 class="logo me-auto"><a href="{% url 'Home' %}"><img src = {% static 'img/logo.png'%} style="width:60px;height:100px;"></img></a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="logo me-auto me-lg-0"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
@@ -192,18 +192,18 @@
 
     <div class="container d-md-flex py-4">
 
-      <div class="me-md-auto text-center text-md-start">
+      <div class=" text-center text-md-start">
         <div class="copyright">
           &copy; Copyright <strong><span>Sea Gate Electric</span></strong>. All Rights Reserved
         </div>
-        <div class="credits">
+      </div>
+      <div class=" me-md-auto ms-md-auto text-center">
           <!-- All the links in the footer should remain intact. -->
           <!-- You can delete the links only if you purchased the pro version. -->
           <!-- Licensing information: https://bootstrapmade.com/license/ -->
           <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/company-free-html-bootstrap-template/ -->
-          {% comment %} Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> {% endcomment %}
+        <div>Designed by <a href="https://jonestah.com/">Jones & Estah Systems</a></div>
         </div>
-      </div>
       <div class="social-links text-center text-md-right pt-3 pt-md-0">
         <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
         <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
