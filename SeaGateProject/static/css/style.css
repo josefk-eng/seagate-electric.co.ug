@@ -3414,7 +3414,7 @@ ul {
         transform: rotate(0deg);
         -webkit-transition: .6s;
         -o-transition: .6s;
-        transition: .6s
+        transition: .6s;
     }
 
     100% {
@@ -3422,7 +3422,7 @@ ul {
         transform: rotate(360deg);
         -webkit-transition: .6s;
         -o-transition: .6s;
-        transition: .6s
+        transition: .6s;
     }
 }
 
